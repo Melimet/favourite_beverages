@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Juhla Mokka",
+    "weight": 500,
+    "price": 6.50,
+    "roastLevel": 2,
+    "beverageType": "Coffee"
+},
+  {
+    "name": "Presidentti",
+    "weight": 500,
+    "price": 7.49,
+    "roastLevel": 1,
+    "beverageType": "Coffee"
+  },
+  {
+    "name": "Earl Grey",
+    "weight": "500",
+    "price": 3.50,
+    "roastLevel": 1,
+    "beverageType": "Tea"
+  }
+]
