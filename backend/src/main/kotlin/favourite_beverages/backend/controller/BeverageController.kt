@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 import favourite_beverages.backend.service.BeverageService
 import org.springframework.validation.annotation.Validated
+import org.springframework.web.bind.annotation.CrossOrigin
 
 @RequestMapping("/api/beverages")
 @RestController
 @Validated
+@CrossOrigin(origins = ["http://localhost:5173"])
 class BeverageController(val service: BeverageService) {
     @GetMapping
     fun getBeverages() = service.getBeverages()
