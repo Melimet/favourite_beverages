@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
-import { Beverage } from "../types";
+import { useEffect, useState } from "react"
+import { BeverageType, BeverageZod } from "../types"
 
-function useBeverages(): Beverage[] {
-  const [beverages, setBeverages] = useState<Beverage[]>([]);
+function useBeverages(): BeverageType[] {
+  const [beverages, setBeverages] = useState<BeverageType[]>([])
 
   useEffect(() => {
     async function fetchBeverages() {
-      const response = await fetch('http://localhost:8080/api/beverages');
-      const data = await response.json();
+      const response = await fetch("http://localhost:8080/api/beverages")
+      const data = await response.json()
+
+      const validatedData = await data.flatMap((beverage: unknown) => {
+        const zodParse = BeverageZod.safeParse(beverage)
+        return zodParse.success ? beverage : []
+      })
       
-      
+      console.log(validatedData)
+      setBeverages(validatedData)
+    }
 
-      setBeverages(data);
-      console.log(beverages)
-    };
+    fetchBeverages()
+  }, [])
 
-    fetchBeverages();
-  }, []);
-
-  return beverages;
+  return beverages
 }
 
-export default useBeverages;
+export default useBeverages
