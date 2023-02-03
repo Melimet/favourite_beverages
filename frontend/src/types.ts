@@ -8,6 +8,6 @@ export const BeverageZod = z.object({
   beverageType: z.enum(['Coffee', 'Tea']),
 })
 
-export type Beverage = z.infer<typeof BeverageZod>;
+export type BeverageType = z.infer<typeof BeverageZod>;
 
   
