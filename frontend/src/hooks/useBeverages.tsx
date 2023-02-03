@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { BeverageType, BeverageZod } from "../types"
 
-function useBeverages(): BeverageType[] {
+function useBeverages(): [BeverageType[], React.Dispatch<React.SetStateAction<BeverageType[]>>] {
   const [beverages, setBeverages] = useState<BeverageType[]>([])
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function useBeverages(): BeverageType[] {
     fetchBeverages()
   }, [])
 
-  return beverages
+  return [beverages, setBeverages]
 }
 
 export default useBeverages
