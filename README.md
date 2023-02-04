@@ -13,9 +13,11 @@ During my first interview we briefly talked about Kotlin which is widely used at
 
 ## Installation(Tested on Ubuntu)
 
-Make sure you have [Node](https://nodejs.org/en/) and [Kotlin](https://kotlinlang.org/) with it's dependencies installed. OpenJDK 17.0.5 is the java version being used.
+Make sure you have [Node](https://nodejs.org/en/) and [Kotlin](https://kotlinlang.org/) with it's dependencies installed. OpenJDK 17.0.5 is the java version being used. Also [Gradle](https://gradle.org/) is required.
 
 1. After cloning the repo and being in it's root folder, execute `sh scripts/run_project.sh`  Assuming the script is successful, frontend is accessible in http://localhost:5173 and backend in http://localhost:8080/api/beverages.
+
+_IF_ the script does not work, you just need to execute `npm install` and `npm run dev` in the frontend folder. In the backend you need to run `./gradlew build` and `./gradlew bootRun`
 
 ## Improvements
 
