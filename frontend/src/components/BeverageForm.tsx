@@ -1,5 +1,5 @@
 import { useState } from "react"
-import postBeverage from "../services/beverage"
+import { postBeverage } from "../services/beverage"
 import { BeverageType } from "../types"
 
 interface BeverageFormProps {
